@@ -1,0 +1,97 @@
+Open Terminal and Start the tomcat using the command
+
+	 $CATALINA_HOME/bin/startup.sh
+
+To Test Tomcat  :
+
+	open any browser and type the URL As
+	localhost:8080
+
+And TO Stop The tomcat
+
+	 $CATALINA_HOME/bin/shutdown.sh
+
+*************************************
+
+U Can Find tomcat Folder Located in /home/student
+
+			FOR JSP EXECUTION
+
+Create a Folder with anyname  for eg: Sam   inside  'tomcat/webapps'
+
+Create a new Jsp File say A.jsp  inside Sam folder   i.e  'tomcat/weapps/Sam'
+
+
+Code : A.jsp
+
+<html>
+<head><title>Hello World</title></head>
+<body>
+Hello World!<br/>
+<%
+out.println("Your IP address is " + request.getRemoteAddr());
+%>
+</body>
+</html>
+
+
+to Test this
+
+
+localhost:8080/Sam/A.jsp
+
+
+
+(Tomcat status should be running)
+
+--------------------------------------------------------------------------------------------------
+				For Servlet
+
+
+
+
+
+1. Create Ur Folder Inside   "tomcat/webapps"   Ex:  Sample
+
+2. Create a Folder Named 'WEB-INF' inside "tomcat/webapps/Sample"    //Here Sample is ur Folder
+
+3. Now Copy the "web.xml" File from "tomcat/webapps/ROOT/WEB-INF" to "tomcat/webapps/Sample/WEB-INF"
+
+4. Create another Folder Named 'classes' inside "tomcat/webapps/Sample/WEB-INF"
+
+5. Create Ur Servlet Java Program say 'Demo.java' inside "tomcat/webapps/Sample"
+
+6. Now Edit The "web.xml" File located in "tomcat/webapps/Sample/WEB-INF"
+
+   Add the Following Tags before ending the "</web-app" Tag
+   --------------------------------------------------------------------------------------------
+
+   <servlet>
+   <servlet-name>Demo</servlet-name>    	<!-- Any Name -->
+   <servlet-class>Demo</servlet-class>		<!-- Shoulde be the Class name of ur Java Code -->
+   </servlet>
+
+   <servlet-mapping>
+   <servlet-name>Demo</servlet-name> 		<!-- Same servlet-name which u hv declared abv -->
+   <url-pattern>/Demo</url-pattern>	        <!-- Hw ur going to access in the browser -->
+   </servlet-mapping>
+
+   ---------------------------------------------------------------------------------------------
+
+7. Compile Ur Demo.java with the servlet-api i.e.,
+   javac -cp /home/student/tomcat/lib/servlet-api.jar Demo.java
+
+8. After Compiling Copy the Demo.class to "tomcat/webapps/Sample/WEB-INF/classes" folder
+
+
+   (7th and 8th Step Can be directly done with below command
+      javac   -d   /home/student/tomcat/webapps/Sample/WEB-INF/classes   -cp    /home/student/tomcat/lib/servlet-api.jar   Demo.java
+
+
+9. Open Terminal and Start the tomcat using the command
+    $CATALINA_HOME/bin/startup.sh
+
+10. Open any Browser and Type the URL as
+    localhost:8080/Sample/Demo
+
+	<!-- localhost:8080/Ur Folder/url-pattern given in web.xml file  -->
