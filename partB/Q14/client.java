@@ -17,13 +17,13 @@ public class client
         PrintWriter output = new PrintWriter(link.getOutputStream(),true);
 
         Scanner read = new Scanner(System.in);
-        String clientmsg="";
+        String clientmsg=read.next();
 
         do {
-            clientmsg = read.next();
             output.println(clientmsg);
             String ans = input.nextLine();
             System.out.println("SERVER RESPONSE : "+ans);
+            clientmsg = read.next();
 
         }while(!clientmsg.equals("close"));
 
