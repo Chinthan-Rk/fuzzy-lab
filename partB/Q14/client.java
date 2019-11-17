@@ -19,13 +19,13 @@ public class client
         Scanner read = new Scanner(System.in);
         String clientmsg=read.next();
 
-        do {
+        while(!clientmsg.equals("close")) {
             output.println(clientmsg);
             String ans = input.nextLine();
             System.out.println("SERVER RESPONSE : "+ans);
             clientmsg = read.next();
 
-        }while(!clientmsg.equals("close"));
+        }
 
 
         link.close();
