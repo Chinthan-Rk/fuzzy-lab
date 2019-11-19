@@ -32,8 +32,8 @@ int find(int a)
                 {
                     min=j;
                     pos=i;
-                    break;
                 }
+                break;
             }
         }
     }
