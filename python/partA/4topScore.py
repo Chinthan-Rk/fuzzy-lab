@@ -3,16 +3,18 @@ Given below is the list of marks scored by students. Find top three scorers for 
 marks scored by all students. Implement the solution using Python Programming
 """
 
-students = {
-    "John": 86.5,
-    "Jack": 91.2,
-    "jill": 84.5,
-    "Harry": 72.1,
-    "Joe": 80.5
+studentList = {
+    86.5: 'John',
+    91.2: 'Jack',
+    84.5: 'Jill',
+    72.1: 'Harry',
+    80.5: 'Joe'
 }
 
-topScore = sorted(students.items(), key=lambda kv: kv[1], reverse=True)
-print(topScore[0:3])
-average = sum(students.values())/5
+sortedList = sorted(studentList.keys(), reverse=True)
 
-print(average)
+print("Top 3 scorers")
+for i in sortedList[:3]:
+    print(studentList[i])
+
+print(f"The average marks : {sum(sortedList)/5}")
