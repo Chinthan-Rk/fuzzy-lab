@@ -3,16 +3,7 @@ Consider two strings, String1 and String2 and display the merged string as outpu
 Sample Input:String1:ILikeC String2:MaryLikesPython
 Merged string should be ILCMLPS
 """
-
-string1 = input("Enter string 1 : ")
-string2 = input("Enter string 2 : ")
-newString = ""
-for x in string1:
-    if x.isupper():
-        newString += x
-
-for x in string2:
-    if x.isupper():
-        newString += x
-
-print(newString)
+str1, str2, str3 = input("Enter string 1"), input("Enter string 2"), ""
+for i in str1 + str2:
+    if i.isupper():
+        print(f"{i}", end="")
